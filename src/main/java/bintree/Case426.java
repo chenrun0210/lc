@@ -23,38 +23,58 @@ public class Case426 {
         public Node left;
         public Node right;
 
-        public Node() {}
+        public Node() {
+        }
 
         public Node(int _val) {
             val = _val;
         }
 
-        public Node(int _val,Node _left,Node _right) {
+        public Node(int _val, Node _left, Node _right) {
             val = _val;
             left = _left;
             right = _right;
         }
-    };
+    }
+
+    ;
+
     static class Solution {
-        public Node treeToDoublyList(Node root) {
-            if (root == null) return root;
-            Stack<Node> stack = new Stack<>();
-            List<Node> queue = new ArrayList<>();
-            Node cur = root;
-            //1 先使用中序遍历，将节点保存到队列中去
-            while(!stack.isEmpty()||cur!=null){
-                //先找到左边尽头
-                while(cur!=null){
-                    stack.push(cur);
-                    cur=cur.left;
+        // the smallest (first) and the largest (last) nodes
+        Node first = null;
+        Node last = null;
+
+        public void helper(Node node) {
+            if (node != null) {
+                // left
+                helper(node.left);
+                // node
+                if (last != null) {
+                    // link the previous node (last)
+                    // with the current one (node)
+                    last.right = node;  // 把node节点连接在last的后面
+                    node.left = last;
+                } else {
+                    // keep the smallest node
+                    // to close DLL later on
+                    first = node;
                 }
-                //再弹出来记录处理
-                cur=stack.pop();
-                queue.add(cur);
-                cur=cur.right;
+                last = node;
+                // right
+                helper(node.right);
             }
-            // 中序遍历 的 非递归实现
-            return root;
+        }
+
+        public Node treeToDoublyList(Node root) {
+            if (root == null) {
+                return null;
+            }
+            helper(root);
+            // close DLL
+            last.right = first;
+            first.left = last;
+            return first;
         }
     }
+
 }
