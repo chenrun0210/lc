@@ -37,7 +37,8 @@ public class Case22 {
         HashSet<String> set = new HashSet<>();
         for (String str : generateParenthesis(n - 1)) {
             for (int i = 0; i <= str.length(); i++) {
-                set.add(str.substring(0, i) + "()" + str.substring(i, str.length()));  // 把一个完整的（）插入到每一个位置 ，然后利用set去重
+                // 把一个完整的（）插入到每一个位置 ，然后利用set去重
+                set.add(str.substring(0, i) + "()" + str.substring(i, str.length()));
             }
         }
         return new ArrayList<>(set);
