@@ -31,14 +31,15 @@ public class Case1576 {
 
     static class Solution {
         public int getMaxLen(int[] nums) {
-            int[] maxPositive = new int[nums.length];// 截止到i,成绩为正数的最长长度
-            int[] maxNegative = new int[nums.length];// 截止到i,乘积为负数的最长长度
+            int[] maxPositive = new int[nums.length];// 走到i,nums i参与运算,成绩为正数的最长长度 0不是正数
+            int[] maxNegative = new int[nums.length];// 走到i,nums i参与运算,乘积为负数的最长长度 0不是负数
             maxPositive[0] = nums[0] > 0 ? 1 : 0;
             maxNegative[0] = nums[0] < 0 ? 1 : 0;
             for (int i = 1; i < nums.length; i++) {
                 if (nums[i] > 0) {
                     maxPositive[i] = maxPositive[i - 1] + 1;
                     maxNegative[i] = maxNegative[i - 1] > 0 ?  maxNegative[i - 1] + 1 : 0;
+                    // 乘积为负数的情况： 如果全是正数，就不该加一 ，所以要判定，之前的maxNegative[i - 1]是不是大于0
                 }
                 if (nums[i] == 0) {
                     maxNegative[i] = 0;

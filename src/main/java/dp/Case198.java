@@ -1,6 +1,7 @@
 package dp;
 
 /**
+ * 打家劫舍
  * @author chenrun <chenrun@kuaishou.com>
  * Created on 2021-08-19
  */
@@ -22,7 +23,7 @@ package dp;
 //        输出：12
 //        解释：偷窃 1 号房屋 (金额 = 2), 偷窃 3 号房屋 (金额 = 9)，接着偷窃 5 号房屋 (金额 = 1)。
 //        偷窃到的最高金额 = 2 + 9 + 1 = 12 。
-public class Case198dajiajieshe {
+public class Case198 {
     public int rob(int[] nums) {
         if (nums.length==1) return nums[0];
         if (nums.length==2) return Math.max(nums[0], nums[1]);
@@ -37,7 +38,7 @@ public class Case198dajiajieshe {
     }
 
     public static void main(String[] args) {
-        Case198dajiajieshe case198dajiajieshe = new Case198dajiajieshe();
+        Case198 case198dajiajieshe = new Case198();
         int [] nums = new int [] {2,7,9,3,1};
         System.out.println(case198dajiajieshe.rob(nums));
     }

@@ -24,7 +24,7 @@ package dp;
 //
 //        输入：nums = [0]
 //        输出：0
-public class Case213dajiajieshe2 {
+public class Case213 {
     public int rob(int[] nums) {
         int length = nums.length;
         if (length == 1) {

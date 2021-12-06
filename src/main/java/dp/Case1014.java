@@ -26,14 +26,31 @@ public class Case1014 {
 
     static class Solution {
         // 实际转成每个i,先求i左边最大的 value[k]  + k  = max
-        // 然后再保存一个最大值，为  max + 当前的value[i]-i
+        //  values[i]  + i + values[j] - j
+        // 然后再保存一个最大值，为  max + value[i]-i
         public int maxScoreSightseeingPair(int[] values) {
             int len = values.length;
             int max = values[0] + 0;
             int result = 0;
-            for (int i=1; i< len; i++) {
-                max = Math.max(values[i-1] + i-1, max);
+            for (int i = 1; i < len; i++) {
+                max = Math.max(values[i - 1] + i - 1, max);
                 result = Math.max(result, max + values[i] - i);
+            }
+            return result;
+        }
+
+        // 2021-12-03
+        public int maxScoreSightseeingPairV2(int[] values) {
+            int len = values.length;
+            int[] maxArr = new int[len]; // maxArr[i] 表示  i 左边，   value[i] + i 的最大值
+            maxArr[0] = values[0] + 0;
+            for (int i = 1; i < len; i++) {
+                maxArr[i] = Math.max(values[i-1] + i-1,   maxArr[i-1]); // 因为是左边，这里一定要  i-1
+            }
+
+            int result = 0;
+            for (int i=1;i<len; i++) {
+                result = Math.max(maxArr[i] + values[i] - i, result);
             }
             return result;
         }
