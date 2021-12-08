@@ -9,9 +9,9 @@ import java.util.PriorityQueue;
  * @author chenrun <chenrun@kuaishou.com>
  * Created on 2021-05-20
  */
-public class windowMax {
+public class WindowMax {
     public static void main(String[] args) {
-        windowMax windowMax = new windowMax();
+        WindowMax windowMax = new WindowMax();
         int[] num = {1, 2, 3, 4, 5, 6, 7, 8};
         int k = 3;
         int[] a = windowMax.maxSlidingWindow(num, k);
