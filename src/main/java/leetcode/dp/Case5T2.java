@@ -57,6 +57,7 @@ public class Case5T2 {
 
             }
         }
+        print2dArr(dp);
 
         return s.substring(start, start + max + 1);
     }
@@ -104,7 +105,9 @@ public class Case5T2 {
 
     public static void main(String[] args) {
         Case5T2 case5T2 = new Case5T2();
-        String a = "aacabdkacaa";
+        String a = "a";
         System.out.println(case5T2.longestPalindrome(a));
+        String b = "1aacabdkacaa";
+//        System.out.println(case5T2.longestCommonString(a, b));
     }
 }
