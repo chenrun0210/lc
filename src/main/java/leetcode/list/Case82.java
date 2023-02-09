@@ -1,5 +1,7 @@
 package leetcode.list;
 
+import common.ListNode;
+
 /**
  * @author chenrun <chenrun@kuaishou.com>
  * Created on 2021-09-13

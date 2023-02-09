@@ -1,5 +1,7 @@
 package leetcode.list;
 
+import common.ListNode;
+
 /**
  * @author chenrun <chenrun@kuaishou.com>
  * Created on 2021-09-10
@@ -21,23 +23,6 @@ public class Case19 {
             }
             start.next = start.next.next;
             return dummyHead.next;
-        }
-    }
-
-    static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
         }
     }
 }

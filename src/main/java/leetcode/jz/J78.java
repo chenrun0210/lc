@@ -1,5 +1,7 @@
 package leetcode.jz;
 
+import common.ListNode;
+
 import java.util.PriorityQueue;
 
 /**

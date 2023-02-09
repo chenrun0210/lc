@@ -1,7 +1,6 @@
 package leetcode.microsoft;
 
-import leetcode.list.ListNode;
-
+import common.ListNode;
 /**
  * @author chenrun <chenrun@kuaishou.com>
  * Created on 2021-10-01
