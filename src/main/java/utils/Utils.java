@@ -17,7 +17,23 @@ public class Utils {
         }
     }
 
+    public static void print1dArr(Object[] mat) {
+        int row = mat.length;
+        for (int j = 0; j < row; j++) {
+            System.out.print(mat[j] + " ");
+        }
+        System.out.println();
+    }
+
     public static void print1dArr(int[] mat) {
+        int row = mat.length;
+        for (int j = 0; j < row; j++) {
+            System.out.print(mat[j] + " ");
+        }
+        System.out.println();
+    }
+
+    public static void print1dArr(Integer[] mat) {
         int row = mat.length;
         for (int j = 0; j < row; j++) {
             System.out.print(mat[j] + " ");

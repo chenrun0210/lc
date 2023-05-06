@@ -1,5 +1,7 @@
 package leetcode.tree;
 
+import common.TreeNode;
+
 /**
  * @author chenrun <chenrun@kuaishou.com>
  * Created on 2021-07-06
