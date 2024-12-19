@@ -49,7 +49,7 @@ public class Case23 {
 
 
     public ListNode mergeLists(ListNode[] lists) {
-        ListNode ans = new ListNode();
+        ListNode ans = null; // 是一定要初始为一个空链表的 不然会出错
         for (int i=0; i<lists.length; i++) {
             ans = mergeTwoLists(ans, lists[i]);
         }

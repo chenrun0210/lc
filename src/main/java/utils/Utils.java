@@ -1,5 +1,7 @@
 package utils;
 
+import common.ListNode;
+
 public class Utils {
     /**
      * 输出二维数组
@@ -39,5 +41,20 @@ public class Utils {
             System.out.print(mat[j] + " ");
         }
         System.out.println();
+    }
+
+    public static ListNode listNode(Integer[] nodes) {
+        ListNode head = new ListNode();
+        ListNode cur = head;
+        for (int i = 0; i < nodes.length; i++) {
+            ListNode nodeI = new ListNode();
+            nodeI.val = nodes[i];
+            if (i == nodes.length -1) {
+                nodeI.next = null;
+            }
+            cur.next = nodeI;
+            cur = cur.next;
+        }
+        return head.next;
     }
 }
