@@ -55,7 +55,7 @@ public class WindowMax {
                 queue.poll(); // 这是弹出队列的首位
             }
             // 当窗口长度为k时 保存当前窗口中最大值
-            if (i + 1 >= k) {
+            if (i  >= k - 1) {
                 result[i - k + 1] = nums[queue.peek()];
             }
         }
