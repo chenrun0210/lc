@@ -90,6 +90,9 @@ public class Case76 {
         return result;
     }
 
+    // 参考题解
+    // 思路是没有每次都对比整个map； 用了matchCount；来标记2个计数map里匹配的字符个数
+    //
     public String minWindow1(String s, String t) {
         if (s == null || s.length() == 0 || t == null || t.length() == 0) {
             return "";
@@ -99,7 +102,6 @@ public class Case76 {
         for (char c : t.toCharArray()) {
             tFreq.put(c, tFreq.getOrDefault(c, 0) + 1);
         }
-
         // 滑动窗口中的有效字符统计
         Map<Character, Integer> windowFreq = new HashMap<>();
 
@@ -120,7 +122,7 @@ public class Case76 {
                 }
             }
 
-            // 当匹配数量达到目标，尝试缩小窗口
+            // 当匹配数量达到目标，尝试缩小窗口 这个条件精髓
             while (matchCount == tFreq.size()) {
                 if (right - left < minLen) {
                     minLen = right - left;

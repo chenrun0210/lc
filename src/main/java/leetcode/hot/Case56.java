@@ -25,10 +25,7 @@ intervals[i].length == 2
 
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.PriorityQueue;
-import java.util.Stack;
+import java.util.*;
 
 @Slf4j
 public class Case56 {
@@ -118,4 +115,37 @@ public class Case56 {
                     '}';
         }
     }
+
+    // 官方题解
+    // 思路 Arrays.sort 传Comparator先排序，按照区间的开始排序
+    // 思路 是只考虑结果list里面最新的那个区间，结果区间： [i..j][k..q][n..m]
+    // 每次只需要对比 [n..m]和 当前的intervals里的[l..r]
+    // 只需要比 m 和 l 的关系，已经按照区间的开始排了序， n 是不可能 比l还大的
+    public int[][] merge1(int[][] intervals) {
+        if (intervals.length == 0) {
+            return new int[0][2];
+        }
+        Arrays.sort(intervals, new Comparator<int[]>() {
+            public int compare(int[] interval1, int[] interval2) {
+                return interval1[0] - interval2[0];
+            }
+        });
+        List<int[]> merged = new ArrayList<int[]>();
+        for (int i = 0; i < intervals.length; ++i) {
+            int L = intervals[i][0], R = intervals[i][1];
+            if (merged.size() == 0 || merged.get(merged.size() - 1)[1] < L) {
+                // 结果里面的区间的最大的值 比当前最小值的还小  那当前的就是一个新的区间
+                merged.add(new int[]{L, R});
+            } else {
+                // 结果里面的区间的最大的值 比当前的最小值要大， 更新当前最新区间 的最大值
+                merged.get(merged.size() - 1)[1] = Math.max(merged.get(merged.size() - 1)[1], R);
+            }
+        }
+        return merged.toArray(new int[merged.size()][]);
+    }
+
+//    作者：力扣官方题解
+//    链接：https://leetcode.cn/problems/merge-intervals/solutions/203562/he-bing-qu-jian-by-leetcode-solution/
+//    来源：力扣（LeetCode）
+//    著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 }
