@@ -1,5 +1,6 @@
 package common;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import utils.Utils;
 
 import java.util.*;
@@ -28,11 +29,15 @@ public class TreeNode {
 
     @Override
     public String toString() {
-        return "TreeNode{" +
-                "val=" + val +
-                ", left=" + left +
-                ", right=" + right +
-                '}';
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        try {
+            return objectMapper.writeValueAsString(this);
+
+        } catch (Exception e) {
+            return super.toString();
+
+        }
     }
 
     public static Integer[] levelTraversal(TreeNode root) {
