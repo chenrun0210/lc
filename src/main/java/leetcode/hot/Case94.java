@@ -2,7 +2,9 @@ package leetcode.hot;
 
 import common.TreeNode;
 
-import java.util.List;
+import java.util.*;
+
+import static common.TreeNode.createTreeNode;
 
 /*
 94. 二叉树的中序遍历
@@ -23,10 +25,36 @@ import java.util.List;
 进阶: 递归算法很简单，你可以通过迭代算法完成吗？
  */
 public class Case94 {
+    // 有2种思路  递归 和 栈
+    // 中序的是  中根  左 根 右
+    public static void main(String[] args) {
+        Integer[] nums = {1,2,3,4,5,null,8,null,null,6,7,9};
+        Case94 case94 = new Case94();
+        List<Integer> result = case94.inorderTraversal(createTreeNode(nums));
+        System.out.println(result);
+    }
 
     public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode current = root; // 用于遍历左子树
+        // current（当前遍历的节点）和 node（从栈中弹出的节点）
+        while (current != null || !stack.isEmpty()) {
+            // 1. 先将所有左子节点入栈
+            while (current != null) {
+                stack.push(current);
+                current = current.left;
+            }
 
-        return null;
+            // 2. 取出栈顶节点（当前需要访问的节点）
+            TreeNode node = stack.pop();
+            result.add(node.val);
+
+            // 3. 进入右子树
+            current = node.right;
+        }
+
+        return result;
     }
 
 }
