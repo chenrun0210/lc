@@ -46,7 +46,7 @@ public class Case94 {
                 current = current.left;
             }
 
-            // 2. 取出栈顶节点（当前需要访问的节点）
+            // 2. 取出栈顶节点（当前需要访问的节点）  栈顶的元素一定是做左侧的元素了 ，可以进行访问
             TreeNode node = stack.pop();
             result.add(node.val);
 
