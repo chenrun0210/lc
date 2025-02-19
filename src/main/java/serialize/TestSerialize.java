@@ -1,6 +1,12 @@
 package serialize;
 
+import common.TreeNode;
+
 import java.io.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 public class TestSerialize {
     public static void main(String[] args) throws IOException {
@@ -63,4 +69,5 @@ class Person implements Serializable{
                 ", par2='" + par2 + '\'' +
                 '}';
     }
+
 }
