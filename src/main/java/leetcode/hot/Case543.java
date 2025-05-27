@@ -41,7 +41,6 @@ public class Case543 {
         if (node == null) {
             return 0;
         }
-
         // 递归计算左、右子树深度
         int leftDepth = depth(node.left);
         int rightDepth = depth(node.right);
