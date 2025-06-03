@@ -1,4 +1,4 @@
-package leetcode.hot;
+package leetcode.tree.dfs;
 /*
 104. 二叉树的最大深度
 简单
@@ -15,6 +15,7 @@ package leetcode.hot;
 提示：
 树中节点的数量在 [0, 104] 区间内。
 -100 <= Node.val <= 100
+经典题目
  */
 
 

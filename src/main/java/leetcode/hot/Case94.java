@@ -23,6 +23,13 @@ import static common.TreeNode.createTreeNode;
 树中节点数目在范围 [0, 100] 内
 -100 <= Node.val <= 100
 进阶: 递归算法很简单，你可以通过迭代算法完成吗？
+
+经典题目
+1,2,3,4,5,null,8,null,null,6,7,9
+            1
+       2            3
+   4      5      n     8
+ n   n  6  7         9
  */
 public class Case94 {
     // 有2种思路  递归 和 栈

@@ -20,6 +20,8 @@ package leetcode.binsearch;
  * <p>
  * 输入: nums = [1,3,5,6], target = 7
  * 输出: 4
+ *
+ * 经典题目* *
  */
 
 public class Case35 {
