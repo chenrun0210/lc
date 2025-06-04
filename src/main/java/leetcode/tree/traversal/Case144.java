@@ -1,4 +1,4 @@
-package leetcode.hot;
+package leetcode.tree.traversal;
 
 import common.TreeNode;
 
