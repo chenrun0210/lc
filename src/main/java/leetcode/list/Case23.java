@@ -8,6 +8,7 @@ import java.util.PriorityQueue;
  * @author chenrun <chenrun@kuaishou.com>
  * Created on 2021-09-10、
  * 合并K个升序链表
+ * 经典题目*
  */
 public class Case23 {
     // 优先队列的方法

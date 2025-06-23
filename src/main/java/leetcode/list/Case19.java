@@ -6,6 +6,7 @@ import common.ListNode;
  * @author chenrun <chenrun@kuaishou.com>
  * Created on 2021-09-10
  * 删除倒数第N个节点
+ * 经典题目*
  */
 public class Case19 {
 

@@ -6,6 +6,7 @@ import common.ListNode;
  * @author chenrun <chenrun@kuaishou.com>
  * Created on 2021-09-12
  * 给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。
+ * 经典题目*
  */
 public class Case206ReverseList {
     public static void main(String[] args) {
@@ -26,3 +27,6 @@ public class Case206ReverseList {
         return  dummyHead.next;
     }
 }
+//   1 2 3 4 5
+//   1 -> null
+//   0 -> 1 -> null

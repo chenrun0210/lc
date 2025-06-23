@@ -6,6 +6,7 @@ import common.ListNode;
  * @author chenrun <chenrun@kuaishou.com>
  * Created on 2021-09-10
  * 合并两个有序链表
+ * 经典题目*
  */
 public class Case21 {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
