@@ -1,7 +1,6 @@
 package leetcode.hot;
 
 import common.TreeNode;
-import javafx.util.Pair;
 
 import java.util.*;
 

@@ -1,7 +1,5 @@
 package leetcode.tree;
 
-import com.sun.xml.internal.bind.marshaller.NoEscapeHandler;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
